@@ -1,0 +1,10 @@
+dependencies:
+  pre:
+    - wget -O - -o /dev/null http://get.takipi.com | sudo bash /dev/stdin -i  --sk=S13268#h+QkXAtigGtGMm+P#xQXtUxqTHryG0eT1sDsk9ghnAuGm2Wnqaz3TP/zNZhM=#6a28
+  
+machine:
+  environment:
+    JAVA_TOOL_OPTIONS: -agentlib:TakipiAgent
+  post:
+    - /opt/takipi/bin/takipi-service --daemon:
+      background: true
